@@ -1,0 +1,30 @@
+PSEA
+
+
+
+Required files:
+
+
+DESeq2 normalized counts table (deseq_normcounts.csv)
+Column names: chr, start, end, peakID, samples…
+
+
+Previously generated peaksets of interest 
+.grp file peakset_peakIDs (no column names)
+.bed file (chr, start, end, peakset_peakID) (no columns names)
+
+
+Run R script -- 
+Generates union peak list bed file from deseq_normcounts.csv
+
+Run psea_findOverlaps.sh —
+To find overlapping peaks between experimental peaks and peaksets
+
+Run R script --
+Reads in .grp peakset files 
+Reads in overlap files from psea_findOverlaps.sh 
+Unifies naming schemes
+Outputs stats from overla and peak renaming
+Outputs normalized counts table & modified peakset.grp files for gsea
+
+--> Run gsea (http://software.broadinstitute.org/gsea/index.jsp)
