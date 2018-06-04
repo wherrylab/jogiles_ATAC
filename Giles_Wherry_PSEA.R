@@ -15,7 +15,7 @@ bed <- write_tsv(bed, path = "unionPeakList_all.bed", col_names = FALSE) # To be
 normCounts_sub <- peaks_reads %>% dplyr::select(-c(chr, start, end)) # To be used in RenamePSEA function
 
 
-# Use bedtools intersect (psea_findOverlaps.sh) to find overlap between experiment peak list and peaksets of interest
+# Use bedtools intersect (Giles_Wherry_PSEA_findOverlaps.sh) to find overlap between experiment peak list and peaksets of interest
 
 
 # Read in the peakset lists
@@ -33,7 +33,7 @@ for(i in filenames){
 }
 
 
-# Output files from psea_findOverlaps.sh
+# Output files from Giles_Wherry_PSEA_findOverlaps.sh
 
 filenames <- list.files(path=getwd(), pattern = "_overlap.txt") 
 
