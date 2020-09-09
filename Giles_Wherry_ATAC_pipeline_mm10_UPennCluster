@@ -482,7 +482,7 @@ echo $?
 for i in `ls *_debl.bed`;
 do
  sampleID="${i%.*}"
- bedtools coverage -counts -a $i -b ${sampleID}_peaks.bg > ${sampleID}_indCounts.bedgraph
+ bedtools coverage -counts -b $i -a ${sampleID}_peaks.bg > ${sampleID}_indCounts.bedgraph
 done
 
 echo $?
@@ -562,7 +562,7 @@ echo $?
 for i in `ls *_debl.bed`;
 do
  sampleID="${i%.*}"
- bedtools coverage -counts -a $i -b unionbed_merged.bed | bedtools sort -i - > ${sampleID}_counts.bedgraph
+ bedtools coverage -counts -b $i -a unionbed_merged.bed | bedtools sort -i - > ${sampleID}_counts.bedgraph
 done
 
 echo $?
